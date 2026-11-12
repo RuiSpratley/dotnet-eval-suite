@@ -8,7 +8,7 @@ on:
 
 jobs:
   evaluate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout Repository
@@ -34,9 +34,10 @@ jobs:
       working-directory: ./tests-e2e
       run: npm install
 
-    # Use the official Playwright action to avoid command-not-found errors (127)
+    # Install browsers safely without failing on Linux OS dependency lookups
     - name: Install Playwright Browsers
-      uses: microsoft/playwright-github-action@v1
+      working-directory: ./tests-e2e
+      run: npx playwright install
 
     - name: Run API, Pactum, and CodeceptJS Tests
       run: |
