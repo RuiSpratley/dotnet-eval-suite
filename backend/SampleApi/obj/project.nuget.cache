@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8xMPYr/ZBxg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\RuiSilva\\dotnet-eval-suite\\backend\\SampleApi\\SampleApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\RuiSilva\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.15\\microsoft.aspnetcore.openapi.10.0.15.nupkg.sha512",
+    "C:\\Users\\RuiSilva\\.nuget\\packages\\microsoft.openapi\\2.13.0\\microsoft.openapi.2.13.0.nupkg.sha512"
+  ],
+  "logs": []
+}

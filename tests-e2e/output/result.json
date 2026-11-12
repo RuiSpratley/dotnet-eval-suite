@@ -1,0 +1,38 @@
+{
+  "hasFailed": false,
+  "stats": {
+    "passes": 1,
+    "failures": 0,
+    "tests": 1,
+    "pending": 0,
+    "failedHooks": 0,
+    "start": "2026-11-12T10:44:17.975Z",
+    "end": "2026-11-12T10:44:19.223Z",
+    "duration": 1248
+  },
+  "duration": 1476,
+  "tests": [
+    {
+      "opts": {},
+      "tags": [],
+      "uid": "0s_kEVpsdh9pcYcGA+I_hbF+CtQDpr6XxZHqlsArs+",
+      "retries": -1,
+      "title": "test something",
+      "state": "passed",
+      "notes": [],
+      "meta": {
+        "browser": "chromium",
+        "browserVersion": "158.0.8127.18",
+        "windowSize": "1280x720"
+      },
+      "artifacts": [],
+      "duration": 7,
+      "parent": {
+        "title": "login",
+        "file": "C:\\Users\\RuiSilva\\dotnet-eval-suite\\tests-e2e\\tests\\login_test.js"
+      },
+      "steps": []
+    }
+  ],
+  "failures": []
+}
