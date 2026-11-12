@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test:api": "node node_modules/mocha/bin/mocha.js api.spec.js",
+  "test:api": "node node_modules/mocha/bin/mocha.js api.spec.cjs",
   "test:e2e": "codeceptjs run --steps"
   },
   "keywords": [],
