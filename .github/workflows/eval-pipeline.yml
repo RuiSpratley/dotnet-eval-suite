@@ -14,7 +14,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    # 1. Setup Environments
+    # 1. Setup Environments (Upgraded versions to clear Node deprecations)
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v4
       with:
@@ -56,7 +56,7 @@ jobs:
         echo "=== Running Pactum API Tests ==="
         npm --prefix tests-e2e run test:api
 
-        # Run CodeceptJS E2E tests (CodeceptJS automatically saves failure screenshots/logs to tests-e2e/output/)
+        # Run CodeceptJS E2E tests
         echo "=== Running CodeceptJS E2E Tests ==="
         npm --prefix tests-e2e run test:e2e
 
@@ -66,7 +66,7 @@ jobs:
     # 5. Upload Test Results and Coverage Artifacts
     - name: Upload .NET Test Results & Code Coverage
       uses: actions/upload-artifact@v4
-      if: always() # Uploads even if tests fail so you can inspect failures
+      if: always()
       with:
         name: dotnet-test-and-coverage-reports
         path: |
