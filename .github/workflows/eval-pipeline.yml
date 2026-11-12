@@ -34,10 +34,9 @@ jobs:
       working-directory: ./tests-e2e
       run: npm install
 
-    # Fixed Playwright execution path for Linux CI runners
-    - name: Install Playwright Browsers & System Dependencies
-      working-directory: ./tests-e2e
-      run: npx playwright install --with-deps
+    # Use the official Playwright action to avoid command-not-found errors (127)
+    - name: Install Playwright Browsers
+      uses: microsoft/playwright-github-action@v1
 
     - name: Run API, Pactum, and CodeceptJS Tests
       run: |
