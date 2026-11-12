@@ -3,10 +3,12 @@ export const config = {
   tests: './tests/*_test.js',
   output: './output',
   helpers: {
-    Playwright: {
+   Playwright: {
+      url: 'http://localhost:5000',
+      show: false, // <-- Set to false to force headless mode in CI
       browser: 'chromium',
-      url: 'http://localhost',
-      show: true
+      restart: false,
+      keepCookies: false
     }
   },
   include: {
