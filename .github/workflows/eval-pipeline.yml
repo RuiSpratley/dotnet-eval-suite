@@ -30,11 +30,11 @@ jobs:
           --logger "trx;LogFileName=xunit_results.trx" \
           --collect:"XPlat Code Coverage"
 
-    # Use 'npm install' instead of 'npm ci' to prevent lockfile mismatch errors in CI
     - name: Install Node Dependencies
       working-directory: ./tests-e2e
       run: npm install
 
+    # Fixed Playwright execution path for Linux CI runners
     - name: Install Playwright Browsers & System Dependencies
       working-directory: ./tests-e2e
       run: npx playwright install --with-deps
