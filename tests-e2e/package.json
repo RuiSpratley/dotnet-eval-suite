@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
   "test:api": "node node_modules/mocha/bin/mocha.js api.spec.cjs",
-  "test:e2e": "codeceptjs run --steps"
+  "test:e2e": "node node_modules/codeceptjs/bin/codecept.js run --steps"
   },
   "keywords": [],
   "author": "",
