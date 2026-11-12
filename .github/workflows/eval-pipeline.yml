@@ -12,16 +12,16 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
-    # 1. Setup Environments (Upgraded versions to clear Node deprecations)
+    # 1. Setup Environments (Updated to modern versions targeting Node 24)
     - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: '10.x'
 
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: '20'
 
