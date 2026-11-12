@@ -12,59 +12,50 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v7
+      uses: actions/checkout@v4
 
-    # 1. Setup Environments (Updated to modern versions targeting Node 24)
     - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v6
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '10.x'
 
     - name: Setup Node.js
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v4
       with:
         node-version: '20'
 
-    # 2. Run .NET Unit Tests with TRX Results and Code Coverage
     - name: Run xUnit Unit Tests with Coverage
       run: |
         dotnet test backend/SampleApi.Tests/SampleApi.Tests.csproj \
           --logger "trx;LogFileName=xunit_results.trx" \
           --collect:"XPlat Code Coverage"
 
-    # 3. Install Node.js Test Dependencies & Playwright Binaries
+    # Use 'npm install' instead of 'npm ci' to prevent lockfile mismatch errors in CI
     - name: Install Node Dependencies
       working-directory: ./tests-e2e
-      run: npm ci
+      run: npm install
 
     - name: Install Playwright Browsers & System Dependencies
       working-directory: ./tests-e2e
       run: npx playwright install --with-deps
 
-    # 4. Start .NET API, Run Pactum & CodeceptJS Sequentially, Then Stop API
     - name: Run API, Pactum, and CodeceptJS Tests
       run: |
-        # Start the .NET API in the background on port 5000
         dotnet run --project backend/SampleApi/SampleApi.csproj --urls "http://localhost:5000" &
         API_PID=$!
 
-        # Wait for the API to boot up
         echo "Waiting for .NET API to start..."
         sleep 5
 
-        # Run Pactum API tests
         echo "=== Running Pactum API Tests ==="
         npm --prefix tests-e2e run test:api
 
-        # Run CodeceptJS E2E tests
         echo "=== Running CodeceptJS E2E Tests ==="
         npm --prefix tests-e2e run test:e2e
 
-        # Clean up and terminate the background API process
         kill $API_PID
 
-    # 5. Upload Test Results and Coverage Artifacts
-    - name: Upload .NET Test Results & Code Coverage
+    - name: Upload .NET Test Results & Coverage
       uses: actions/upload-artifact@v4
       if: always()
       with:
