@@ -34,26 +34,31 @@ jobs:
       working-directory: ./tests-e2e
       run: npm install
 
-    # Install browsers safely without failing on Linux OS dependency lookups
+    # Fixed: Invoke Playwright CLI directly through Node to avoid permission denied (126)
     - name: Install Playwright Browsers
       working-directory: ./tests-e2e
-      run: npx playwright install
+      run: node node_modules/playwright/cli.js install
 
-    - name: Run API, Pactum, and CodeceptJS Tests
+    - name: Start .NET API Background Process
       run: |
         dotnet run --project backend/SampleApi/SampleApi.csproj --urls "http://localhost:5000" &
-        API_PID=$!
-
-        echo "Waiting for .NET API to start..."
+        echo "API_PID=$!" >> $GITHUB_ENV
         sleep 5
 
-        echo "=== Running Pactum API Tests ==="
-        npm --prefix tests-e2e run test:api
+    - name: Run Pactum API Tests
+      working-directory: ./tests-e2e
+      run: npm run test:api
 
-        echo "=== Running CodeceptJS E2E Tests ==="
-        npm --prefix tests-e2e run test:e2e
+    - name: Run CodeceptJS E2E Tests
+      working-directory: ./tests-e2e
+      run: npm run test:e2e
 
-        kill $API_PID
+    - name: Stop .NET API
+      if: always()
+      run: |
+        if [ -n "${{ env.API_PID }}" ]; then
+          kill ${{ env.API_PID }} || true
+        fi
 
     - name: Upload .NET Test Results & Coverage
       uses: actions/upload-artifact@v4
