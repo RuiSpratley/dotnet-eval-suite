@@ -6,18 +6,18 @@
     "tests": 1,
     "pending": 0,
     "failedHooks": 0,
-    "start": "2026-11-12T10:44:17.975Z",
-    "end": "2026-11-12T10:44:19.223Z",
-    "duration": 1248
+    "start": "2026-11-13T08:19:27.877Z",
+    "end": "2026-11-13T08:19:28.846Z",
+    "duration": 969
   },
-  "duration": 1476,
+  "duration": 1520,
   "tests": [
     {
       "opts": {},
       "tags": [],
-      "uid": "0s_kEVpsdh9pcYcGA+I_hbF+CtQDpr6XxZHqlsArs+",
+      "uid": "nR7TjYZ+t6xXlwJJVaKHEvZC6ofF3n6irDdsrQylUz",
       "retries": -1,
-      "title": "test something",
+      "title": "user can view root API page",
       "state": "passed",
       "notes": [],
       "meta": {
@@ -26,12 +26,24 @@
         "windowSize": "1280x720"
       },
       "artifacts": [],
-      "duration": 7,
+      "duration": 614,
       "parent": {
-        "title": "login",
+        "title": "API Health Check via Browser",
         "file": "C:\\Users\\RuiSilva\\dotnet-eval-suite\\tests-e2e\\tests\\login_test.js"
       },
-      "steps": []
+      "steps": [
+        {
+          "opts": {},
+          "title": "amOnPage",
+          "args": [
+            "/"
+          ],
+          "status": "success",
+          "startTime": 1794557968235,
+          "endTime": 1794557968838,
+          "parent": {}
+        }
+      ]
     }
   ],
   "failures": []

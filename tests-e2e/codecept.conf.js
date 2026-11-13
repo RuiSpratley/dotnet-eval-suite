@@ -12,7 +12,8 @@ export const config = {
     }
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    loginPage: './pages/login_page.cjs' // Register your page object here
   },
   noGlobals: true,
   plugins: {},

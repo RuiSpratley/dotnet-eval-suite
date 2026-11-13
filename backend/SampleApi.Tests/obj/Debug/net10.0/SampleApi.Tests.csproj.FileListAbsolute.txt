@@ -106,3 +106,4 @@ C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi.Tests\obj\Debug\net10.0\re
 C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi.Tests\obj\Debug\net10.0\SampleApi.Tests.pdb
 C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi.Tests\obj\Debug\net10.0\SampleApi.Tests.genruntimeconfig.cache
 C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi.Tests\obj\Debug\net10.0\ref\SampleApi.Tests.dll
+C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi.Tests\obj\Debug\net10.0\SampleApi.Tests.sourcelink.json

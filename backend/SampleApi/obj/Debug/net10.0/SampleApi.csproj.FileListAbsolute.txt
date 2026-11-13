@@ -31,3 +31,4 @@ C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\refint\S
 C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\SampleApi.pdb
 C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\SampleApi.genruntimeconfig.cache
 C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\ref\SampleApi.dll
+C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\SampleApi.sourcelink.json
