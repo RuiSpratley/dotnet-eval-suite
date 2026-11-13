@@ -32,3 +32,5 @@ C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\SampleAp
 C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\SampleApi.genruntimeconfig.cache
 C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\ref\SampleApi.dll
 C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\SampleApi.sourcelink.json
+C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\bin\Debug\net10.0\SampleApi.staticwebassets.runtime.json
+C:\Users\RuiSilva\dotnet-eval-suite\backend\SampleApi\obj\Debug\net10.0\compressed\pkx63no6wi-{0}-yj2fhz50de-yj2fhz50de.gz
